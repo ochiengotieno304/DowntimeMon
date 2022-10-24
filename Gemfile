@@ -65,6 +65,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "erb-formatter"
 end
 
 group :test do
@@ -75,3 +76,5 @@ group :test do
 end
 
 gem "devise", "~> 4.8"
+
+gem "ruby-lsp", "~> 0.3.4", :group => :development
