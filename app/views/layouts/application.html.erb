@@ -12,40 +12,9 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <% if notice %>
-        <div
-          class="
-            p-4
-            text-sm
-            text-gray-700
-            bg-gray-100
-            rounded-lg
-            dark:bg-gray-700
-            dark:text-gray-300
-          "
-          role="alert"
-        >
-          <span class="font-medium"><%= notice %></span>
-        </div>
-      <% end %>
+    <main class="container mx-auto mt-12 px-5 flex">
 
-      <% if alert %>
-        <div
-          class="
-            p-4
-            text-sm
-            text-gray-700
-            bg-gray-100
-            rounded-lg
-            dark:bg-gray-700
-            dark:text-gray-300
-          "
-          role="alert"
-        >
-          <span class="font-medium"><%= alert %></span>
-        </div>
-      <% end %>
+      <%= render "shared/sidebar" %>
 
       <%= yield %>
     </main>
