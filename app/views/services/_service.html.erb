@@ -1,22 +1,26 @@
+
 <div id="<%= dom_id service %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= service.name %>
-  </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Endpoint:</strong>
-    <%= service.endpoint %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
-    <%= service.status %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this service", service, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this service', edit_service_path(service), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <%= service.name %>
+                </th>
+                <td class="py-4 px-6">
+                    <%= service.endpoint %>
+                </td>
+                <td class="py-4 px-6">
+                    <%= service.status %>
+                </td>
+                <td class="py-4 px-6">
+                    300
+                </td>
+                <td class="py-4 px-6">
+                <% if action_name != "show" %>
+    <%= link_to "Show", service, class: "inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+    <% link_to "Edit", edit_service_path(service), class: "inline-flex items-center font-medium text-blue-900 dark:text-blue-500 hover:underline" %>
   <% end %>
+                </td>
+            </tr>
+        </tbody>
 </div>

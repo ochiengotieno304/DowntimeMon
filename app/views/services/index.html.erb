@@ -5,10 +5,33 @@
 
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Services</h1>
-    <%= link_to 'New service', new_service_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "New service", new_service_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="services" class="min-w-full">
-    <%= render @services %>
+  <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-11">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                    Name
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Endpoint
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Status
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Interval
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <%= render @services %>
+      </table>
+</div>
   </div>
 </div>
