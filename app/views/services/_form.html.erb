@@ -18,8 +18,14 @@
 
   <div class="my-5">
     <%= form.label :endpoint %>
-    <%= form.text_field :endpoint, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", type: "url" %>
+    <%= form.url_field :endpoint, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
+
+  <div class="my-5">
+    <%= form.label :interval %>
+    <%= form.select :interval, options_for_select(['3 Minutes', '5 Minutes', '10 Minutes']), {prompt: 'Select'}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
 
 
   <div class="inline">

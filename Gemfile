@@ -80,3 +80,5 @@ gem "devise", "~> 4.8"
 gem "ruby-lsp", "~> 0.3.4", :group => :development
 
 gem "httparty"
+
+gem "whenever", require: false
