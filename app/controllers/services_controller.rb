@@ -37,6 +37,8 @@ class ServicesController < ApplicationController
   # PATCH/PUT /services/1 or /services/1.json
   def update
     respond_to do |format|
+      @service.status = Service.check_status(@service.endpoint)
+
       if @service.update(service_params)
         format.html { redirect_to service_url(@service), notice: 'Service was successfully updated.' }
         format.json { render :show, status: :ok, location: @service }

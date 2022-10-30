@@ -82,3 +82,5 @@ gem "ruby-lsp", "~> 0.3.4", :group => :development
 gem "httparty"
 
 gem "whenever", require: false
+
+gem "rufus-scheduler"

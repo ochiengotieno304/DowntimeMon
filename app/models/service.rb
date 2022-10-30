@@ -1,5 +1,6 @@
 class Service < ApplicationRecord
-  # include Concurrent::Async
+  @services = Service.all
+
   include HTTParty
 
   def self.check_status(endpoint)
@@ -8,5 +9,12 @@ class Service < ApplicationRecord
     response.code
   rescue StandardError => e
     puts e.message
+  end
+
+  def update_all_status
+    @services.each do |service|
+      service.status = '500'
+      service.save
+    end
   end
 end
