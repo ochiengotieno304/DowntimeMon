@@ -23,7 +23,7 @@
 
   <div class="my-5">
     <%= form.label :interval %>
-    <%= form.select :interval, options_for_select(['3 Minutes', '5 Minutes', '10 Minutes']), {prompt: 'Select Interval'}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :interval, options_for_select(["1 Minute", "3 Minutes", "5 Minutes", "10 Minutes", "15 Minutes", "30 Minutes", "45 Minutes"]), {}, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
 

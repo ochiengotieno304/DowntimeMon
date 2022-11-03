@@ -20,8 +20,7 @@ class ServicesController < ApplicationController
   # POST /services or /services.json
   def create
     @service = Service.new(service_params)
-
-    @service.status = Service.check_status(@service.endpoint)
+    # @service.status = Service.check_status(@service.endpoint)
 
     respond_to do |format|
       if @service.save
@@ -37,7 +36,7 @@ class ServicesController < ApplicationController
   # PATCH/PUT /services/1 or /services/1.json
   def update
     respond_to do |format|
-      @service.status = Service.check_status(@service.endpoint)
+      # @service.status = Service.check_status(@service.endpoint) TODO: Move to service.rb in initialize method
 
       if @service.update(service_params)
         format.html { redirect_to service_url(@service), notice: 'Service was successfully updated.' }

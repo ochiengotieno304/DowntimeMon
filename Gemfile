@@ -84,3 +84,5 @@ gem "httparty"
 gem "whenever", require: false
 
 gem "rufus-scheduler"
+
+gem "sidekiq", "~> 7.0"
