@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :services
-  root 'services#index'
+  root 'home#index'
 
   get "*path", to: "application#routing_error"
 end
