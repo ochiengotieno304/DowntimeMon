@@ -206,7 +206,7 @@
       </li>
       <% if user_signed_in? %>
         <li>
-          <%= link_to "Log Out", destroy_user_session_path, class: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700" %>
+          <%= button_to "Log Out", destroy_user_session_path, class: "flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700", method: :delete %>
         </li>
 
       <% else %>
