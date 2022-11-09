@@ -1,6 +1,4 @@
 class Service < ApplicationRecord
-  @services = Service.all
-
   include HTTParty
 
   def self.check_status(endpoint)
@@ -12,8 +10,8 @@ class Service < ApplicationRecord
   end
 
   def update_all_status
-    @services.each do |service|
-      service.status = '500'
+    Service.all do |service|
+      service.status = Service.check_status(service.endpoint)
       service.save
     end
   end
@@ -27,7 +25,8 @@ class Service < ApplicationRecord
     ServiceJob.set(wait: interval.minutes).perform_later(self) if interval_previously_changed?
   end
 
-  after_initialize do
-    self.status ||= update_status
-  end
+
+  # after_initialize do
+  #   self.status ||= 200
+  # end
 end

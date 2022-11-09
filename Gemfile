@@ -77,12 +77,10 @@ end
 
 gem "devise", "~> 4.8"
 
-gem "ruby-lsp", "~> 0.3.4", :group => :development
-
 gem "httparty"
 
-gem "whenever", require: false
-
-gem "rufus-scheduler"
-
 gem "sidekiq", "~> 7.0"
+
+gem "erb-formatter", :group => :development
+
+gem "whenever", require: false
