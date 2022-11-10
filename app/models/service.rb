@@ -1,11 +1,9 @@
 class Service < ApplicationRecord
   belongs_to :user
-  
   include HTTParty
 
   def self.check_status(endpoint)
     response = HTTParty.get(endpoint)
-
     response.code
   rescue StandardError => e
     puts e.message
