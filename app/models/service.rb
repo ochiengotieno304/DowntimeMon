@@ -1,4 +1,6 @@
 class Service < ApplicationRecord
+  belongs_to :user
+  
   include HTTParty
 
   def self.check_status(endpoint)
@@ -24,7 +26,6 @@ class Service < ApplicationRecord
   after_save_commit do
     ServiceJob.set(wait: interval.minutes).perform_later(self) if interval_previously_changed?
   end
-
 
   # after_initialize do
   #   self.status ||= 200

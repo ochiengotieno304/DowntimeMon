@@ -1,26 +1,41 @@
-
 <div id="<%= dom_id service %>">
 
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <%= service.name %>
-                </th>
-                <td class="py-4 px-6">
-                    <%= service.endpoint %>
-                </td>
-                <td class="py-4 px-6">
-                    <%= service.status %>
-                </td>
-                <td class="py-4 px-6">
-                    <%= service.interval %>
-                </td>
-                <td class="py-4 px-6">
-                <% if action_name != "show" %>
-    <%= link_to "Show", service, class: "inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
-    <% link_to "Edit", edit_service_path(service), class: "inline-flex items-center font-medium text-blue-900 dark:text-blue-500 hover:underline" %>
-  <% end %>
-                </td>
-            </tr>
-        </tbody>
+<tbody>
+    <% if service.user == current_user %>
+
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+    <th
+        scope="row"
+        class="
+          py-4
+          px-6
+          font-medium
+          text-gray-900
+          whitespace-nowrap
+          dark:text-white
+        "
+      >
+
+
+        <%= service.name %>
+      </th>
+      <td class="py-4 px-6">
+        <%= service.endpoint %>
+      </td>
+      <td class="py-4 px-6">
+        <%= service.status %>
+      </td>
+      <td class="py-4 px-6">
+        <%= service.interval %>
+      </td>
+      <td class="py-4 px-6">
+        <% if action_name != "show" %>
+          <%= link_to "Show", service, class: "inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+          <% link_to "Edit", edit_service_path(service), class: "inline-flex items-center font-medium text-blue-900 dark:text-blue-500 hover:underline" %>
+        <% end %>
+      </td>
+
+    </tr>
+    <% end %>
+  </tbody>
 </div>
