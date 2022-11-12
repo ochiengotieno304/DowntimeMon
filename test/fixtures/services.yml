@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  endpoint: MyString
-  status: MyString
+  name: Example
+  endpoint: https://example.com
+  status: 200
+  interval: 5
 
 two:
-  name: MyString
-  endpoint: MyString
-  status: MyString
+  name: Google
+  endpoint: https://google.com
+  status: 200
+  interval: 3

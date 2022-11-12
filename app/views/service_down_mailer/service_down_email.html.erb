@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+  <body>
+    <%= @service.name %> is currently experiencing downtime </p>
+    <p>
+      service details<br>
+      --------------------------
+    </p>
+    <p>Name:
+      <%= @service.name %></p>
+    <p>Endpoint:
+      <%= @service.endpoint %></p>
+
+    <p>Assign appropriate personel to check on the problem</p>
+  </body>
+</html>

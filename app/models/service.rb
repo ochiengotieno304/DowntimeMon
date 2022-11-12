@@ -11,6 +11,7 @@ class Service < ApplicationRecord
 
   def update_status
     self.status = Service.check_status(endpoint)
+    ServiceDownMailer.with(service: self).service_down_email(user).deliver_later if status != '200'
     status_history.append(status)
     save
   end

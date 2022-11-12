@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+  </head>
+  <body>
+    New service, <%= @service.name %> was added to your WebMon account</p>
+    <p>
+      service details<br>
+      --------------------------
+    </p>
+    <p>Name:
+      <%= @service.name %></p>
+    <p>Interval:
+      <%= @service.interval %></p>
+    <p>Endpoint:
+      <%= @service.endpoint %></p>
+  </body>
+</html>
