@@ -16,35 +16,38 @@
       ><%= notice %></p>
     <% end %>
 
-    <div class="overflow-x-auto relative">
-      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-        <thead
-          class="
-            text-xs
-            text-gray-700
-            uppercase
-            bg-gray-100
-            dark:bg-gray-700
-            dark:text-gray-400
-          "
-        >
-          <tr>
-            <th scope="col" class="py-3 px-6 rounded-l-lg">
-              Name
-            </th>
-            <th scope="col" class="py-3 px-6">
-              Endpoint
-            </th>
-            <th scope="col" class="py-3 px-6 rounded-r-lg">
-              Status
-            </th>
-            <th scope="col" class="py-3 px-6 rounded-r-lg">
-              Interval
-            </th>
-          </tr>
-        </thead>
-        <%= render @service %>
-      </table>
+    <div id="services" class="min-w-full">
+      <div class="overflow-x-auto relative shadow-md sm:rounded-lg mt-11">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead
+            class="
+              text-xs
+              text-gray-700
+              uppercase
+              bg-gray-50
+              dark:bg-gray-700
+              dark:text-gray-400
+            "
+          >
+
+            <tr>
+              <th scope="col" class="py-3 px-6">
+                Name
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Endpoint
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Status
+              </th>
+              <th scope="col" class="py-3 px-6">
+                Interval
+              </th>
+            </tr>
+          </thead>
+          <%= render @service %>
+        </table>
+      </div>
     </div>
 
     <% @service.status_history %>
