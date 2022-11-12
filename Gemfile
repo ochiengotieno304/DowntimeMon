@@ -81,8 +81,8 @@ gem "httparty"
 
 gem "sidekiq", "~> 7.0"
 
-gem "erb-formatter", :group => :development
-
 gem "whenever", require: false
 
 gem "pg"
+
+gem "chartkick", "~> 4.2", ">= 4.2.1"

@@ -9,7 +9,9 @@ class ServicesController < ApplicationController
   end
 
   # GET /services/1 or /services/1.json
-  def show; end
+  def show
+    @piechartdata = Service.pluck(:status_history)
+  end
 
   # GET /services/new
   def new

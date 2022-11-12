@@ -9,15 +9,9 @@ class Service < ApplicationRecord
     puts e.message
   end
 
-  def update_all_status
-    Service.all do |service|
-      service.status = Service.check_status(service.endpoint)
-      service.save
-    end
-  end
-
   def update_status
     self.status = Service.check_status(endpoint)
+    status_history.append(status)
     save
   end
 
