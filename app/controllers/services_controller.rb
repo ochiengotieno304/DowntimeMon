@@ -33,6 +33,7 @@ class ServicesController < ApplicationController
 
     respond_to do |format|
       if @service.save
+        ServiceMailer.with(service: @service).new_service_email(current_user).deliver_later
         format.html { redirect_to service_url(@service), notice: 'Service was successfully created.' }
         format.json { render :show, status: :created, location: @service }
       else
