@@ -50,5 +50,5 @@ production:
   <<: *default
   database: webmon_production
   username: webmon
-  password: <%= ENV["webmon_DATABASE_PASSWORD"] %>
+  password: <%= ENV["WEBMON_DATABASE_PASSWORD"] %>
   url: <%= ENV['DATABASE_URL'] %>
