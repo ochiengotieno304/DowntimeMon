@@ -48,8 +48,7 @@
     </div>
 
     <% @service.status_history %>
-    <% pie_chart @piechartdata %>
-    <%= pie_chart @status_history_tally %>
+    <%= pie_chart @status_history_tally, donut: true, download: true %>
 
     <%= link_to 'Edit', edit_service_path(@service), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
