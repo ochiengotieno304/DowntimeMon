@@ -11,6 +11,9 @@ class ServicesController < ApplicationController
   # GET /services/1 or /services/1.json
   def show
     @piechartdata = Service.pluck(:status_history)
+    @data = @service.status_history
+    @unique_status = @service.status_history.uniq
+    @status_history_tally = @service.status_history.tally
   end
 
   # GET /services/new
