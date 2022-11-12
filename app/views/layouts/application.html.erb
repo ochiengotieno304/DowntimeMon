@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WebMon</title>
+    <title>Timely</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,10 +12,7 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <main class="container mx-auto mt-12 px-5 flex">
-
-      <% render "shared/sidebar" %>
-
+    <main class="container mx-auto mt-12">
       <%= yield %>
     </main>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
