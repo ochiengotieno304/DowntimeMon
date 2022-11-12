@@ -84,3 +84,5 @@ gem "sidekiq", "~> 7.0"
 gem "erb-formatter", :group => :development
 
 gem "whenever", require: false
+
+gem "pg"
