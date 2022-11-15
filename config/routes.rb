@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :services
   root 'home#index'
-
-  get "*path", to: "application#routing_error"
+  get 'maintenance_action/services/:id', to: 'services#maintenance_report', as: 'maintenance_action'
+  get '*path', to: 'application#routing_error'
 end

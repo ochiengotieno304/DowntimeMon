@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  before_action :set_service, only: %i[show edit update destroy]
+  before_action :set_service, only: %i[show edit update destroy maintenance_report]
   before_action :authenticate_user!
   before_action :correct_user, only: %i[edit update destroy]
 
@@ -14,11 +14,12 @@ class ServicesController < ApplicationController
     @data = @service.status_history
     @unique_status = @service.status_history.uniq
     @status_history_tally = @service.status_history.tally
+
+    @tally = Service.generate_report(@service.interval, @service.created_at, @data, 8)
   end
 
   # GET /services/new
   def new
-    # @service = Service.new
     @service = current_user.services.build
   end
 
@@ -27,9 +28,7 @@ class ServicesController < ApplicationController
 
   # POST /services or /services.json
   def create
-    # @service = Service.new(service_params)
     @service = current_user.services.build(service_params)
-    # @service.status = Service.check_status(@service.endpoint)
 
     respond_to do |format|
       if @service.save
@@ -69,6 +68,11 @@ class ServicesController < ApplicationController
   def correct_user
     @service = current_user.services.find_by(id: params[:id])
     redirect_to services_path, notice: 'Not Authorized To Edit This Service' if @service.nil?
+  end
+
+  def maintenance_report
+    @data = @service.status_history
+    @recommended_maintenance_date = Service.generate_report(@service.interval, @service.created_at, @data, 8)
   end
 
   private
