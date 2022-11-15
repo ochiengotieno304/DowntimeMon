@@ -22,7 +22,11 @@
           <%= service.endpoint %>
         </td>
         <td class="py-4 px-6">
-          <%= service.status_history.last %>
+          <%= service.status %>
+          <span
+            class="text-xl <%= service.status_history.last == "200" ? 'text-green-500' : 'text-red-500' %>"
+          >
+            &#x2022;</span>
         </td>
         <td class="py-4 px-6">
           <%= service.interval %>

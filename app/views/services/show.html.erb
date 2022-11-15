@@ -49,6 +49,8 @@
         </table>
       </div>
     </div>
+    <%= @tally %>
+
 
     <% @service.status_history %>
     <%= pie_chart @status_history_tally, donut: true, download: true %>
@@ -58,5 +60,6 @@
       <%= button_to 'Delete', service_path(@service), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to 'Services', services_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Maintenance Action', maintenance_action_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
 </div>
