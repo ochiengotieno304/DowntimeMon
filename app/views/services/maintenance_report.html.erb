@@ -1,1 +1,62 @@
-<%= @recommended_maintenance_date&.strftime("%b %dth, %Y   %H:%I %p %Z") %>
+<% if  @recommended_maintenance_date %>
+  <% @daily = @recommended_maintenance_date[0]&.strftime("%b %dth, %Y   %H:%I %p %Z") %>
+  <% @weekly = @recommended_maintenance_date[1]&.strftime("%b %dth, %Y   %H:%I %p %Z") %>
+  <% @monthly = @recommended_maintenance_date[2]&.strftime("%b %dth, %Y   %H:%I %p %Z") %>
+  <% @three_monthly = @recommended_maintenance_date[3]&.strftime("%b %dth, %Y   %H:%I %p %Z") %>
+<% else %>
+  <% @daily = "No Failures" %>
+  <% @weekly = "No Failures" %>
+  <% @monthly = "No Failures" %>
+  <% @three_monthly = "No Failures" %>
+<% end %>
+
+<div class="flex justify-between items-center my-5">
+  <h1 class="font-bold text-4xl">Recommended Maintenance Dates</h1>
+  <%= link_to "Back to services", services_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+</div>
+
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead
+      class="
+        text-xs
+        text-gray-700
+        uppercase
+        bg-gray-50
+        dark:bg-gray-700
+        dark:text-gray-400
+      "
+    >
+      <tr>
+        <th scope="col" class="py-3 px-6">
+          Daily
+        </th>
+        <th scope="col" class="py-3 px-6">
+          Weekly
+        </th>
+        <th scope="col" class="py-3 px-6">
+          Monthly
+        </th>
+        <th scope="col" class="py-3 px-6">
+          3 Months
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <td class="py-4 px-6">
+          <%= @daily %>
+        </td>
+        <td class="py-4 px-6">
+          <%= @weekly %>
+        </td>
+        <td class="py-4 px-6">
+          <%= @monthly %>
+        </td>
+        <td class="py-4 px-6">
+          <%= @three_monthly %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
