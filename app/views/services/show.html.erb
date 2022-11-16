@@ -49,8 +49,6 @@
         </table>
       </div>
     </div>
-    <%= @tally %>
-
 
     <% @service.status_history %>
     <%= pie_chart @status_history_tally, donut: true, download: true %>
