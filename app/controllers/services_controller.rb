@@ -14,8 +14,6 @@ class ServicesController < ApplicationController
     @data = @service.status_history
     @unique_status = @service.status_history.uniq
     @status_history_tally = @service.status_history.tally
-
-    @tally = Service.generate_report(@service.interval, @service.created_at, @data, 8)
   end
 
   # GET /services/new
@@ -71,8 +69,7 @@ class ServicesController < ApplicationController
   end
 
   def maintenance_report
-    @data = @service.status_history
-    @recommended_maintenance_date = Service.generate_report(@service.interval, @service.created_at, @data, 8)
+    @recommended_maintenance_date = Service.generate_report(@service.interval, @service.status_history, @service.last_down)
   end
 
   private
