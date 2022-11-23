@@ -5,7 +5,7 @@
   only works if an associated object already exists, not if it‘s nil! -->
 
   <div class="field">
-  <h1 class="text-xl">Add Summary</h1>
+  <h1 class="text-xl font-bold">Add Maintenance Summary</h1>
     <div class="my-5">
       <%= f.input :maintainer, input_html: { class: 'block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full' }, wrapper: false, label_html: { class: 'label' } %>
     </div>
@@ -23,5 +23,5 @@
     </div>
   </div>
 
-  <%= f.button :submit, 'Add Summary', class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <%= f.button :submit, 'Add Summary', class: "rounded-lg py-3 px-5 bg-blue-900 text-white inline-block font-medium cursor-pointer" %>
 <% end %>
