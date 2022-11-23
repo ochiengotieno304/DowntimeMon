@@ -1,7 +1,11 @@
 <%= form_with(model: service, class: "contents") do |form| %>
   <% if service.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+    <div
+      id="error_explanation"
+      class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3"
+    >
+      <h2><%= pluralize(service.errors.count, "error") %>
+        prohibited this service from being saved:</h2>
 
       <ul>
         <% service.errors.each do |error| %>
@@ -13,12 +17,12 @@
 
   <div class="my-5">
     <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "Example" %>
   </div>
 
   <div class="my-5">
     <%= form.label :endpoint %>
-    <%= form.url_field :endpoint, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.url_field :endpoint, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full", placeholder: "https://www.example.com" %>
   </div>
 
   <div class="my-5">
