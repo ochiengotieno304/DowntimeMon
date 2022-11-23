@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reason: MyText
+  maintainer: MyString
+  duration: MyString
+  last_downtime: 2022-11-23 11:46:16
+
+two:
+  reason: MyText
+  maintainer: MyString
+  duration: MyString
+  last_downtime: 2022-11-23 11:46:16

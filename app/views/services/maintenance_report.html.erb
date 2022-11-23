@@ -1,8 +1,8 @@
 <% if  @recommended_maintenance_date %>
-  <% @daily = @recommended_maintenance_date[0]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @weekly = @recommended_maintenance_date[1]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @monthly = @recommended_maintenance_date[2]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @three_monthly = @recommended_maintenance_date[3]&.strftime("%b %dth, %Y   %H:%I %p") %>
+  <% @daily = @recommended_maintenance_date[0]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @weekly = @recommended_maintenance_date[1]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @monthly = @recommended_maintenance_date[2]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @three_monthly = @recommended_maintenance_date[3]&.strftime("%b %d, %Y   %H:%I %p") %>
 <% else %>
   <% @daily = "No Failures" %>
   <% @weekly = "No Failures" %>
@@ -14,7 +14,7 @@
   <h1 class="font-bold text-4xl">Recommended Maintenance Dates</h1>
   <%= link_to "Back to services", services_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
 </div>
-<h2 class="font-bold text-xl py-4"><%= @service.name%></h2>
+<h2 class="font-bold text-xl py-4"><%= @service.name %></h2>
 
 <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -60,4 +60,15 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="my-12">
+
+  <%= render 'reports/reports' %>
+</div>
+
+<div class="">
+  <div id="report-form">
+    <%= render 'reports/form' %>
+  </div>
 </div>

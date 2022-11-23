@@ -3,18 +3,8 @@
   <tbody>
     <% if service.user == current_user %>
 
-      <tr class="bg-white dark:bg-gray-800 dark:border-gray-700">
-        <th
-          scope="row"
-          class="
-            py-4
-            px-6
-            font-medium
-            text-gray-900
-            whitespace-nowrap
-            dark:text-white
-          "
-        >
+      <tr class="bg-white">
+        <th scope="row" class=" py-4 px-6 font-medium text-gray-900 whitespace-nowrap ">
 
           <%= service.name %>
         </th>
@@ -34,8 +24,8 @@
         </td>
         <td class="py-4 px-6">
           <% if action_name != "show" %>
-            <%= link_to "View", service, class: "inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
-            <% link_to "Edit", edit_service_path(service), class: "inline-flex items-center font-medium text-blue-900 dark:text-blue-500 hover:underline" %>
+            <%= link_to "View", service, class: "inline-flex items-center font-medium text-blue-600  hover:underline" %>
+            <% link_to "Edit", edit_service_path(service), class: "inline-flex items-center font-medium text-blue-900  hover:underline" %>
           <% end %>
         </td>
       </tr>

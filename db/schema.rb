@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_16_082910) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_084858) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reports", force: :cascade do |t|
+    t.text "reason"
+    t.string "maintainer"
+    t.string "duration"
+    t.datetime "last_downtime"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "service_id"
+    t.index ["service_id"], name: "index_reports_on_service_id"
+  end
 
   create_table "services", force: :cascade do |t|
     t.string "name"

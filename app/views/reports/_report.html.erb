@@ -1,0 +1,28 @@
+<div class="my-5">
+  <div class="">
+    <tbody>
+      <tr class="bg-white border-b">
+        <td class="py-4 px-6">
+          <%= report.maintainer %>
+        </td>
+        <td class="py-4 px-6">
+          <%= report.duration %>
+        </td>
+        <td class="py-4 px-6">
+          <%= report.reason %>
+        </td>
+        <td class="py-4 px-6">
+          <%= report.created_at.strftime("%b %d, %Y   %H:%I %p") %>
+        </td>
+        <td>
+          <% if action_name != "show" %>
+            <%= link_to 'View', [report.service, report],
+            class: "rounded-lg py-1 px-5 bg-blue-900 text-white inline-block font-medium cursor-pointer", data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </td>
+
+      </tr>
+    </tbody>
+  </div>
+
+</div>

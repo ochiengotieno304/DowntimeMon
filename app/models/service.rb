@@ -1,5 +1,7 @@
 class Service < ApplicationRecord
   belongs_to :user
+  has_many :reports, dependent: :destroy
+
   include HTTParty
 
   def self.check_status(endpoint)
