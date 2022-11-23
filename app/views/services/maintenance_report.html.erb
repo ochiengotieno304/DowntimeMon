@@ -12,7 +12,7 @@
 
 <div class="flex justify-between items-center my-5">
   <h1 class="font-bold text-4xl">Recommended Maintenance Dates</h1>
-  <%= link_to "Back to services", services_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  <%= link_to "Back to services", services_path, class: "rounded-lg py-3 px-5 bg-blue-900 text-white block font-medium" %>
 </div>
 <h2 class="font-bold text-xl py-4"><%= @service.name %></h2>
 
@@ -63,11 +63,10 @@
 </div>
 
 <div class="my-12">
-
   <%= render 'reports/reports' %>
 </div>
 
-<div class="">
+<div class="my-12">
   <div id="report-form">
     <%= render 'reports/form' %>
   </div>
