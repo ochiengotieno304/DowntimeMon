@@ -1,10 +1,13 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_service, only: %i[create destroy]
+  before_action :set_service, only: %i[create destroy show]
+  before_action :set_report, only: %i[show destroy]
 
   def index
     @reports = Report.all
   end
+
+  def show; end
 
   def create
     @report = @service.reports.create(report_params)
@@ -12,7 +15,6 @@ class ReportsController < ApplicationController
   end
 
   def destroy
-    @report = @report.find(params[:id])
     @report.destroy
     redirect_to maintenance_action_path(@service)
   end

@@ -1,8 +1,8 @@
 <% if  @recommended_maintenance_date %>
-  <% @daily = @recommended_maintenance_date[0]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @weekly = @recommended_maintenance_date[1]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @monthly = @recommended_maintenance_date[2]&.strftime("%b %dth, %Y   %H:%I %p") %>
-  <% @three_monthly = @recommended_maintenance_date[3]&.strftime("%b %dth, %Y   %H:%I %p") %>
+  <% @daily = @recommended_maintenance_date[0]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @weekly = @recommended_maintenance_date[1]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @monthly = @recommended_maintenance_date[2]&.strftime("%b %d, %Y   %H:%I %p") %>
+  <% @three_monthly = @recommended_maintenance_date[3]&.strftime("%b %d, %Y   %H:%I %p") %>
 <% else %>
   <% @daily = "No Failures" %>
   <% @weekly = "No Failures" %>
@@ -62,12 +62,13 @@
   </table>
 </div>
 
-<section class="section my-5">
-    <h2 class=""><strong><% @service.reports.count %></strong>Maintenance Summary Reports</h2>
-    <%= render @service.reports %>
-    <div class="">
-      <hr/>
-      <h3 class="subtitle is-3">Leave a maintenance summary</h3>
-      <%= render 'reports/form' %>
-    </div>
-</section>
+<div class="my-12">
+
+  <%= render 'reports/reports' %>
+</div>
+
+<div class="">
+  <div id="report-form">
+    <%= render 'reports/form' %>
+  </div>
+</div>

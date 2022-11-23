@@ -3,3 +3,11 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "chartkick"
 import "Chart.bundle"
+
+
+function showForm() {
+  let form = document.getElementById("report-form");
+  if (form.style.display === "none") {
+    form.style.display = "block";
+  }
+}
