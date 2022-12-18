@@ -47,8 +47,8 @@ test:
   password: password
 
 production:
-  <<: *default
-  database: webmon_production
-  username: webmon
-  password: <%= ENV["WEBMON_DATABASE_PASSWORD"] %>
+  adapter: cockroachdb
+  port: 26257
+  database: timely
+  username: password
   url: <%= ENV['DATABASE_URL'] %>

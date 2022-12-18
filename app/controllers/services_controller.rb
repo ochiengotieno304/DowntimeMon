@@ -12,8 +12,8 @@ class ServicesController < ApplicationController
   def show
     @piechartdata = Service.pluck(:status_history)
     @data = @service.status_history
-    @unique_status = @service.status_history.uniq
-    @status_history_tally = @service.status_history.tally
+    @unique_status = @service.status_history.uniq.compact
+    @status_history_tally = @service.status_history.compact.tally
   end
 
   # GET /services/new
