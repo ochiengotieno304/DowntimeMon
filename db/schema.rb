@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_084858) do
     t.integer "interval"
     t.integer "user_id"
     t.string "status_history", default: [], array: true
-    t.datetime "last_down", precision: nil
+    t.datetime "last_down"
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 

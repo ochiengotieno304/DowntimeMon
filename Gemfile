@@ -90,3 +90,5 @@ gem "chartkick", "~> 4.2", ">= 4.2.1"
 gem "simple_form"
 
 gem 'activerecord-cockroachdb-adapter'
+
+gem "faraday", "~> 2.7"

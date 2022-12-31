@@ -2,13 +2,15 @@ class Service < ApplicationRecord
   belongs_to :user
   has_many :reports, dependent: :destroy
 
-  include HTTParty
-
   def self.check_status(endpoint)
-    response = HTTParty.get(endpoint)
-    response.code
+    @response = Faraday.get(endpoint)
+    @response.status
   rescue StandardError => e
     puts e.message
+  end
+
+  def self.request_headers
+    @response.headers
   end
 
   def update_status
