@@ -1,0 +1,19 @@
+name: Dependabot-Slack
+on:
+  pull_request:
+    branches:
+      - 'dependabot/**'
+
+jobs:
+  dependabot_slack:
+    runs-on: ubuntu-22.04
+    name: Send message to Slack when a push, a pull request or an issue is made
+    steps:
+      - name: Send message to Slack API
+        uses: archive/github-actions-slack@v2.0.0
+        id: notify
+        with:
+          slack-bot-user-oauth-access-token: ${{ secrets.DEPENDABOT_ALERT_SECRET }}
+          slack-channel: 'timely'
+          slack-text": New Dependabot PR ${{ github.event.pull_request.html_url }}
+
