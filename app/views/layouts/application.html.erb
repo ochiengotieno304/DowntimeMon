@@ -54,9 +54,11 @@
     </svg>
   </div>
     <%= render 'shared/navbar' %>
-    <main class="container mx-auto mt-12 px-5">
+    <main class="container mx-auto mt-12 px-5 mb-12">
       <%= yield %>
     </main>
+
+    <%= render 'shared/footer' %>
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
   </body>
 </html>
