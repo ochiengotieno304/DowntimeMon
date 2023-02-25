@@ -85,7 +85,7 @@ gem "whenever", require: false
 
 gem "pg"
 
-gem "chartkick", "~> 4.2", ">= 4.2.1"
+gem "chartkick", "~> 5.0"
 
 gem "simple_form"
 
