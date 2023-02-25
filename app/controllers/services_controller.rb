@@ -69,7 +69,8 @@ class ServicesController < ApplicationController
   end
 
   def maintenance_report
-    @recommended_maintenance_date = Service.generate_report(@service.interval, @service.status_history, @service.last_down)
+    @recommended_maintenance_date = Service.generate_report(@service.interval, @service.status_history,
+                                                            @service.last_down)
   end
 
   private
