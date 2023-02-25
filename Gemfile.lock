@@ -72,6 +72,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    africastalking-ruby (1.0.0)
     ast (2.4.2)
     bcrypt (3.1.18)
     better_html (2.0.1)
@@ -293,6 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-cockroachdb-adapter
+  africastalking-ruby (~> 1.0)
   bootsnap
   capybara
   chartkick (~> 4.2, >= 4.2.1)
