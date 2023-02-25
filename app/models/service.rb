@@ -1,6 +1,8 @@
 class Service < ApplicationRecord
   belongs_to :user
   has_many :reports, dependent: :destroy
+  validates :name, presence: true
+  validates :endpoint, presence: true
 
   def self.check_status(endpoint)
     @response = Faraday.get(endpoint)
@@ -56,7 +58,8 @@ class Service < ApplicationRecord
       next_maintenance_time_3_monthly = last_down + (mtbf_3_monthly - 1).hours
     end
 
-    [next_maintenance_time_daily, next_maintenance_time_weekly, next_maintenance_time_monthly, next_maintenance_time_3_monthly]
+    [next_maintenance_time_daily, next_maintenance_time_weekly, next_maintenance_time_monthly,
+     next_maintenance_time_3_monthly]
   end
 
   # after_initialize do
