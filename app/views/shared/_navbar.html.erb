@@ -22,6 +22,11 @@
           <li>
             <%= button_to 'Sign Out', destroy_user_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" , method: :delete %>
           </li>
+          <a href="/faq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                Help
+              </div>
+            </a>
         </ul>
       </div>
     <% else %>
@@ -33,6 +38,11 @@
             <li>
               <%= link_to 'Sign In', new_user_session_path, class: "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" %>
             </li>
+            <a href="/faq" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
+              <div class="inline-flex items-center">
+                Help
+              </div>
+            </a>
           </ul>
         </div>
     <% end %>
