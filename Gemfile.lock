@@ -54,7 +54,7 @@ GEM
     activerecord (7.0.4.3)
       activemodel (= 7.0.4.3)
       activesupport (= 7.0.4.3)
-    activerecord-cockroachdb-adapter (7.0.0)
+    activerecord-cockroachdb-adapter (7.0.1)
       activerecord (~> 7.0.3)
       pg (~> 1.2)
       rgeo-activerecord (~> 7.0.0)
