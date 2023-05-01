@@ -79,7 +79,7 @@ gem "devise", "~> 4.9"
 
 gem "httparty"
 
-gem "sidekiq", "~> 7.0"
+gem "sidekiq", "~> 7.1"
 
 gem "whenever", require: false
 
