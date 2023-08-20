@@ -171,7 +171,7 @@ GEM
       ast (~> 2.4.1)
     pg (1.5.3)
     public_suffix (5.0.1)
-    puma (6.2.2)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -306,7 +306,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg
-  puma (~> 6.2)
+  puma (~> 6.3)
   rails (~> 7.0.7)
   selenium-webdriver
   sidekiq (~> 7.1)
