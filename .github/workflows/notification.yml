@@ -10,7 +10,7 @@ jobs:
     name: Send message to Slack when a push, a pull request or an issue is made
     steps:
       - name: Send message to Slack API
-        uses: archive/github-actions-slack@v2.7.0
+        uses: archive/github-actions-slack@v2.8.0
         id: notify
         with:
           slack-bot-user-oauth-access-token: ${{ secrets.DEPENDABOT_ALERT_SECRET }}
